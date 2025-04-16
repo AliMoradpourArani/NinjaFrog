@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhr647omnloae"]
+[gd_scene load_steps=8 format=3 uid="uid://bhr647omnloae"]
 
 [ext_resource type="Texture2D" uid="uid://da35xd53dkfan" path="res://assets/Green.png" id="1_bswci"]
 [ext_resource type="Texture2D" uid="uid://oct756btxiq4" path="res://assets/Terrain (16x16).png" id="2_rus8k"]
 [ext_resource type="PackedScene" uid="uid://c1j3tyit6bjbl" path="res://scenes/main_character.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://cnbyhkwm8gunh" path="res://scenes/cherry.tscn" id="4_5xbjy"]
+[ext_resource type="Script" uid="uid://d1na3ypoqpflc" path="res://scenes/game_manager.gd" id="5_4nkto"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xbjy"]
 texture = ExtResource("2_rus8k")
@@ -302,11 +304,8 @@ sources/1 = SubResource("TileSetAtlasSource_5xbjy")
 [node name="Node" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1157.0
+offset_bottom = 628.0
 texture = ExtResource("1_bswci")
 stretch_mode = 1
 
@@ -319,3 +318,14 @@ layer_0/tile_data = PackedInt32Array(851968, 458753, 0, 851969, 458753, 0, 85197
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(249, 513)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(48, 59)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="Cherry" parent="." instance=ExtResource("4_5xbjy")]
+position = Vector2(470, 569)
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_4nkto")
