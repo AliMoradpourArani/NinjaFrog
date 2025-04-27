@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ninja frog"
-run/main_scene="uid://bhr647omnloae"
+run/main_scene="uid://cepsijuk7k01m"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

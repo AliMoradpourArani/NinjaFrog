@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cepsijuk7k01m"]
+
+[ext_resource type="Script" uid="uid://bdcfh3ethb1be" path="res://scenes/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://ev540qjpjk6h" path="res://assets/Yellow.png" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://u4lhfdlxdeu6" path="res://assets/ninja frog logo.png" id="1_l6cm7"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_bqqt6")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_ekxnf")
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.5
+offset_top = -132.0
+offset_right = 273.5
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l6cm7")
+
+[node name="Level2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 120.0
+offset_top = 50.0
+offset_right = 254.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 2"
+
+[node name="Level1" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = 50.0
+offset_right = -104.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 1"
+
+[connection signal="pressed" from="Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
